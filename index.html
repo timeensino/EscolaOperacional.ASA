@@ -983,7 +983,7 @@ A participação no evento implica concordância com as regras de hospedagem, al
   placeholder="Celular com DDD"
   maxlength="15"
   inputmode="numeric"
-  oninput="formatarCelular(this)"
+  oninput="let v=this.value.replace(/\D/g,'').slice(0,11); if(v.length>7){v=v.replace(/^(\d{2})(\d{5})(\d{1,4}).*/, '($1) $2-$3')}else if(v.length>2){v=v.replace(/^(\d{2})(\d+)/, '($1) $2')} this.value=v"
 >
 
 <input type="text" id="marca" value="ASA AÇAI" readonly>
@@ -1408,7 +1408,7 @@ const dadosEnviar = {
      ========================= */
 
   const url =
-    "https://script.google.com/macros/s/AKfycbyrKPDvMTm7VOAT5e-V6wzXT919Kcr0mfFZ7VaUZIQw5FqDneVW8h9G-5VyvRVmYHZe/exec";
+    "https://script.google.com/macros/s/AKfycbwlRbJ7ZakaIMMuaYO9uCO_rOg1WXL68THKf3p6VLqwC7JZ9ECkZv0R0eeW00ucVz9g/exec";
 
 
   try {
