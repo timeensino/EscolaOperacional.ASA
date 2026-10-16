@@ -15,9 +15,9 @@
 
 body {
   font-family: Verdana, sans-serif;
-  background: #FFE8CC;
+  background: #7E57A0;
 }
-.logo-Koni {
+.logo-ASA {
 
   position: fixed;
 
@@ -64,7 +64,7 @@ h1 {
 
     .termo-box {
       background: #f8f9fa;
-      border-left: 6px solid #2e7d32;
+      border-left: 6px solid #6A1B9A;
       padding: 30px;
       border-radius: 15px;
       line-height: 1.8;
@@ -103,7 +103,7 @@ h1 {
       margin-top: 40px;
     }
 
-    .form-grid {
+.form-grid {
 
   display: flex;
   gap: 50px;
@@ -112,6 +112,151 @@ h1 {
 
 }
 
+
+/* =========================
+   NOVO LAYOUT DO FORMULÁRIO
+   ========================= */
+
+.evento-topo {
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.evento-titulo {
+  text-align: center;
+
+  /* Espaço entre o topo da página e o título */
+  margin-top: 35px;
+  margin-bottom: 30px;
+
+  /* Destaque do título */
+  background: #f8fbf9;
+  border: 2px solid #6A1B9A;
+  border-radius: 22px;
+
+  padding: 22px 30px;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+.evento-titulo h2 {
+  color: #1f3c5c;
+  font-size: 36px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.evento-titulo .marca-evento {
+  color: #6A1B9A;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.evento-titulo .ano-evento {
+  color: #1f3c5c;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.objetivo-evento {
+  background: #f5f7fa;
+  padding: 22px 28px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+}
+
+.objetivo-evento strong {
+  font-size: 19px;
+}
+
+.objetivo-evento p {
+  margin: 10px 0 0;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.info-evento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.info-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.info-card strong {
+  font-size: 18px;
+  color: #1f1f1f;
+}
+
+.info-card p {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.inscricao-area {
+  width: 100%;
+  background: #F3E8FF;
+  border-radius: 20px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.prazo-inscricao {
+  background: #fff3f3;
+  border: 2px solid #d62828;
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.prazo-inscricao p {
+  color: #d62828;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 900px) {
+
+  .info-evento {
+    grid-template-columns: 1fr;
+  }
+
+  .evento-titulo h2 {
+    font-size: 30px;
+  }
+
+  .evento-titulo .marca-evento,
+  .evento-titulo .ano-evento {
+    font-size: 24px;
+  }
+
+  .objetivo-evento {
+    padding: 20px;
+  }
+
+  .info-card {
+    padding: 18px;
+  }
+
+  .inscricao-area {
+    padding: 15px;
+  }
+
+}
     .mensagem {
 
   background: #f8f9fa;
@@ -196,13 +341,216 @@ h1 {
       margin-right: 10px;
     }
 
-    @media(max-width:900px) {
+@media (max-width: 900px) {
 
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
+  /* =========================
+     AJUSTES GERAIS DO CELULAR
+     ========================= */
 
-    }
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+  }
+
+
+  /* =========================
+     CAPA INICIAL
+     ========================= */
+
+  #capaInicial {
+    width: calc(100% - 20px) !important;
+    max-width: 100% !important;
+    min-height: calc(100vh - 20px) !important;
+
+    margin: 10px auto !important;
+
+    padding: 25px 18px 30px !important;
+
+    border-radius: 22px !important;
+
+    overflow: hidden;
+  }
+
+
+  /* Capa passa para uma coluna */
+
+  #capaInicial .capa-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+
+    gap: 25px !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 auto !important;
+  }
+
+
+  /* Impede qualquer coluna de estourar a tela */
+
+  #capaInicial .capa-grid > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================
+     LOGO
+     ========================= */
+
+  #capaInicial .capa-grid img {
+    width: 190px !important;
+    max-width: 80% !important;
+    height: auto !important;
+
+    margin-bottom: 12px !important;
+  }
+
+
+  /* =========================
+     TÍTULO PRINCIPAL
+     ========================= */
+
+  #capaInicial h1 {
+    font-size: 38px !important;
+    line-height: 1.05 !important;
+
+    letter-spacing: -1px !important;
+
+    margin: 0 !important;
+
+    text-align: center !important;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* Asa Açai */
+
+  #capaInicial h1 span {
+    font-size: 27px !important;
+    line-height: 1.15 !important;
+  }
+
+
+  /* =========================
+     CAIXA DE INFORMAÇÕES
+     ========================= */
+
+  #capaInicial .capa-grid > div:last-child {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    padding: 22px 18px !important;
+
+    border-radius: 18px !important;
+
+    box-sizing: border-box;
+  }
+
+
+  /* Bem-vindo */
+
+  #capaInicial .capa-grid > div:last-child p:first-child {
+    font-size: 19px !important;
+    line-height: 1.4 !important;
+  }
+
+
+  /* Textos da caixa */
+
+  #capaInicial .capa-grid > div:last-child p {
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+
+  /* =========================
+     BOTÃO
+     ========================= */
+
+  #capaInicial button {
+    width: auto !important;
+    max-width: 100% !important;
+
+    padding: 14px 30px !important;
+
+    font-size: 17px !important;
+
+    white-space: nowrap;
+  }
+
+
+  /* =========================
+     FORMULÁRIO
+     ========================= */
+
+  .form-grid {
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 25px !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box;
+  }
+
+
+  .mensagem-coluna,
+  .form-direita {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    flex: none !important;
+
+    box-sizing: border-box;
+  }
+
+
+  .form-direita input,
+  .form-direita select {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box;
+  }
+
+
+  .mensagem {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    padding: 22px !important;
+
+    font-size: 18px !important;
+
+    box-sizing: border-box;
+  }
+
+
+  .mensagem h2 {
+    font-size: 27px !important;
+  }
+
+
+  h3 {
+    font-size: 17px !important;
+  }
+
+}
 
   </style>
 
@@ -210,97 +558,153 @@ h1 {
 
 <body>
 
-<div class="container" id="capaInicial">
-
-<div style="
-  text-align:center;
-  padding:20px 40px 5px;
+<div class="container" id="capaInicial" style="
+  min-height:calc(100vh - 60px);
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  margin:30px auto;
+  padding:35px 55px 35px;
 ">
-    <img
-      src="Logo Koni.png"
+
+  <!-- ÁREA PRINCIPAL -->
+ <div class="capa-grid" style="
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:50px;
+  align-items:center;
+  width:100%;
+">
+
+    <!-- ESQUERDA: LOGO + TÍTULO -->
+    <div style="
+      text-align:center;
+    ">
+
+      <img
+        src="Logo ASA.png"
+        style="
+          width:280px;
+          margin-bottom:15px;
+        "
+      >
+
+      <h1 style="
+        font-size:52px;
+        font-weight:700;
+        color:#1f3c5c;
+        letter-spacing:-2px;
+        line-height:1.1;
+        margin:0;
+      ">
+        Escola Operacional
+        <br>
+
+        <span style="
+          color:#6A1B9A;
+          font-size:38px;
+        ">
+          Asa Açai
+        </span>
+
+        <span style="
+          color:#1f3c5c;
+          font-size:38px;
+        ">
+          | 2026
+        </span>
+      </h1>
+
+    </div>
+
+
+    <!-- DIREITA: INFORMAÇÕES -->
+    <div style="
+      background:#f5f7fa;
+      padding:30px;
+      border-radius:22px;
+      box-shadow:0 8px 25px rgba(0,0,0,.07);
+      text-align:center;
+    ">
+
+<p style="
+  margin:0;
+  font-size:24px;
+  color:#1f3c5c;
+  font-weight:600;
+  line-height:1.4;
+">
+  🫐 Bem-vindo(a) à experiência da Escola Operacional
+  <span style="color:#6A1B9A;">
+    Asa Açai
+  </span>.
+</p>
+
+<hr style="
+  border:none;
+  border-top:1px solid #dfe3e8;
+  margin:22px 0;
+">
+
+<p style="
+  margin:0;
+  font-size:20px;
+  color:#555;
+  line-height:1.6;
+">
+  Desenvolvendo colaboradores para fortalecer a operação
+  e elevar a excelência em cada restaurante.
+</p>
+
+      <hr style="
+        border:none;
+        border-top:1px solid #dfe3e8;
+        margin:22px 0;
+      ">
+
+      <p style="
+        margin:0;
+        font-size:19px;
+        color:#555;
+        line-height:1.7;
+      ">
+Uma jornada dedicada às mudanças atuais da Asa Açai, aos lançamentos e à 
+apresentação dos novos processos operacionais, promovendo o alinhamento 
+e a atualização dos nossos multiplicadores.
+        <br><br>
+
+        <strong>
+          Inscreva-se e participe do treinamento.
+        </strong>
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- BOTÃO CENTRAL -->
+  <div style="
+    text-align:center;
+    margin-top:30px;
+  ">
+
+    <button
+      onclick="iniciarFormulario()"
       style="
-        width:260px;
-        margin-bottom:15px;
+        background:#6A1B9A;
+        color:white;
+        border:none;
+        padding:16px 50px;
+        border-radius:15px;
+        font-size:20px;
+        font-weight:bold;
+        cursor:pointer;
+        box-shadow:0 10px 30px rgba(20,83,45,.30);
+        transition:.3s;
       "
     >
-
- <h1 style="
-  font-size:68px;
-  font-weight:700;
-  color:#1f3c5c;
-  letter-spacing:-2px;
-  line-height:1.1;
-  margin-bottom:35px;
-">
-      Escola Operacional 2026
-    </h1>
-<div style="
-max-width:900px;
-margin:40px auto 50px;
-background:white;
-padding:40px;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-text-align:center;
-">
-
-    <p style="
-    margin:0;
-    font-size:22px;
-    color:#666;
-    line-height:1.7;
-    ">
-        Desenvolvendo colaboradores para fortalecer a operação e elevar a excelência em cada restaurante.
-    </p>
-
-    <hr style="
-    border:none;
-    border-top:1px solid #ececec;
-    margin:30px 0;
-    ">
-
-    <p style="
-    margin:0;
-    font-size:28px;
-    color:#1f3c5c;
-    font-weight:600;
-    ">
-        🍜 Bem-vindo(a) à experiência da Escola Operacional Koni.
-    </p>
-
-    <hr style="
-    border:none;
-    border-top:1px solid #ececec;
-    margin:30px 0;
-    ">
-
-    <p style="
-    margin:0;
-    font-size:22px;
-    color:#555;
-    line-height:1.8;
-    ">
-        Uma jornada de aprendizado pensada para desenvolver multiplicadores e elevar ainda mais o padrão de excelência dos restaurantes Koni. Inscreva-se e participe do treinamento.
-    </p>
-
-</div>
-
- <button
-  onclick="iniciarFormulario()"
-  style="
-    margin-top:50px;
-    background:#E86A17;
-    color:white;
-    border:none;
-    padding:20px 50px;
-    border-radius:15px;
-    font-size:22px;
-    font-weight:bold;
-    cursor:pointer;
-    box-shadow:0 10px 30px rgba(232,106,23,.30);
-    transition:.3s;
-  "
->
       Iniciar inscrição
     </button>
 
@@ -308,8 +712,7 @@ text-align:center;
 
 </div>
 
-<div id="termo1" style="display:none;">
-
+<div id="termo1" style="display:none; background:#F3E8FF; min-height:100vh; padding-top:30px;">
   <div style="text-align:center;">
 
     <h1 style="
@@ -371,20 +774,25 @@ gestão e organização do evento.
 
   </div>
 
-  <div id="termo2" style="display:none;">
+  <div id="termo2" style="display:none; background:#F3E8FF; min-height:100vh; padding-top:30px;">
 
-    <h1>
-<p style="
-font-size:22px;
-color:#666;
-text-align:center;
-margin-top:-10px;
-margin-bottom:35px;
+<h1 style="
+  text-align:center;
+  color:#1f3c5c;
+  font-size:38px;
+  margin:0 0 10px;
+  font-family:'Noto Serif JP', serif;
 ">
-Leia atentamente as condições para participação no evento.
-</p>
+</h1>
 
-    <div class="termo-box">
+<p style="
+  font-size:18px;
+  color:#666;
+  text-align:center;
+  margin:0 auto 30px;
+  line-height:1.6;
+">
+     <div class="termo-box">
 
 <h3 style="
 margin-top:0;
@@ -419,153 +827,121 @@ A participação no evento implica concordância com as regras de hospedagem, al
 
   </div>
 
-  <div class="formulario" id="formulario">
+  <div class="formulario" id="formulario" style="background:#F3E8FF; min-height:100vh;">
 
-    <div class="form-grid">
+<!-- =========================
+     INFORMAÇÕES DO EVENTO
+     ========================= -->
 
-  <div class="mensagem-coluna">
+<div class="evento-topo">
 
+  <!-- TÍTULO -->
+  <div class="evento-titulo">
 
-<div class="mensagem">
+    <h2>
+      🫐 Escola Operacional
+    </h2>
 
-  <h2 style="
-    color:#1f3c5c;
-    font-size:32px;
-    margin-bottom:25px;
-  ">
-    🍜 Escola Operacional Koni 2026
-  </h2>
-
-  <div style="
-    background:#f5f7fa;
-    padding:22px;
-    border-radius:16px;
-    margin-bottom:22px;
-  ">
-
-    <p style="
-      font-size:19px;
-      line-height:1.8;
-      margin:0;
-    ">
-Participe da Escola Operacional Koni e descubra os novos sabores do Festival de Pokes !  
-Aprenda o preparo dos novos pratos que farão parte do nosso cardápio e esteja pronto para oferecer essa novidade aos clientes.  
-  </p>
+    <div class="marca-evento">
+      Asa Açai
+      <span class="ano-evento">| 2026</span>
+    </div>
 
   </div>
 
-  <div style="
-    border-left:5px solid #2e7d32;
-    padding-left:18px;
-    margin-bottom:28px;
-  ">
 
-    <p style="
-      font-size:22px;
-      font-weight:bold;
-      margin:0;
-      line-height:1.6;
-    ">
-      Uma vaga por restaurante para o colaborador que 
-      irá compartilhar conhecimentos e boas práticas na unidade.
+  <!-- OBJETIVO -->
+  <div class="objetivo-evento">
+
+    <strong>
+      Objetivo do Escola Operacional.
+    </strong>
+
+    <p>
+      Fortalecer o conhecimento dos operadores sobre a cultura do Grupo Trigo,
+      os aspectos estratégicos que orientam a evolução dos produtos do cardápio
+      e as técnicas de preparo, vendas e atendimento ao cliente,
+      promovendo maior engajamento, excelência operacional e melhores
+      experiências para os clientes.
     </p>
 
   </div>
 
-  <div style="
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-  ">
 
-    <div style="
-      background:white;
-      border:1px solid #e5e7eb;
-      border-radius:16px;
-      padding:20px;
-    ">
-      <strong style="font-size:18px;">
+  <!-- TRÊS INFORMAÇÕES -->
+  <div class="info-evento">
+
+
+    <!-- LOCAL -->
+    <div class="info-card">
+
+      <strong>
         📍 Local
       </strong>
 
-      <p style="
-        margin-top:10px;
-        font-size:18px;
-        line-height:1.7;
-      ">
+      <p>
         Cozinha Escola RJ<br>
         Rua do Carmo, 75<br>
-        Centro.
+        Centro - Rio de Janeiro.
       </p>
+
     </div>
 
-    <div style="
-      background:white;
-      border:1px solid #e5e7eb;
-      border-radius:16px;
-      padding:20px;
-    ">
-      <strong style="font-size:18px;">
-         Custos do Restaurante
+
+    <!-- CUSTOS DO RESTAURANTE -->
+    <div class="info-card">
+
+      <strong>
+
+• Despesas do Restaurante
       </strong>
 
-      <p style="
-        margin-top:10px;
-        font-size:18px;
-        line-height:1.7;
-      ">
-        Custos com deslocamento (aéreo, rodoviário, Uber e afins), 
-        jantar e itens do frigobar.
+      <p>
+        Deslocamento (aéreo, rodoviário, Uber e afins), hospedagem e
+        jantar.
       </p>
+
     </div>
 
-    <div style="
-      background:white;
-      border:1px solid #e5e7eb;
-      border-radius:16px;
-      padding:20px;
-    ">
-      <strong style="font-size:18px;">
-         Custos cobertos pelo Fundo de Marketing
+
+    <!-- CUSTOS COBERTOS -->
+    <div class="info-card">
+
+      <strong>
+        ✓ Despesas do Grupo Trigo
       </strong>
 
-      <p style="
-        margin-top:10px;
-        font-size:18px;
-        line-height:1.7;
-      ">
-        Hospedagem, café da manhã, almoço e
-        coffe break são responsabilidade do Grupo Trigo.
+      <p>
+         Almoço e coffee break.
+        
       </p>
+
     </div>
-
-  </div>
-
-  <div style="
-    margin-top:28px;
-    background:#fff3f3;
-    border:2px solid #d62828;
-    border-radius:18px;
-    padding:22px;
-    text-align:center;
-  ">
-
-    <p style="
-      color:#d62828;
-      font-size:24px;
-      font-weight:bold;
-      margin:0;
-      line-height:1.6;
-    ">
-       Inscrições abertas até 31 de julho<br>
-       Vagas limitadas: 30 participantes
-    </p>
 
   </div>
 
 </div>
 
-        <div class="form-direita">
+
+<!-- =========================
+     ÁREA DE INSCRIÇÃO
+     ========================= -->
+
+<div class="inscricao-area">
+
+
+  <!-- PRAZO -->
+  <div class="prazo-inscricao">
+
+    <p>
+      📅 Inscrições abertas até 17 de setembro
+      <br>
+      👥 Vagas limitadas: 30 participantes
+       <br>
+          • Uma vaga por restaurante.
+    </p>
+
+  </div>
 
 <input type="text" id="nome" placeholder="Nome completo">
 
@@ -597,7 +973,7 @@ oninput="this.value=this.value.replace(/\D/g,'')"
   oninput="this.value=this.value.replace(/\D/g,'')"
 >
 
-<input type="text" id="marca" value="KONI" readonly>
+<input type="text" id="marca" value="ASA AÇAI" readonly>
 
         <input
   list="listaRestaurantes"
@@ -607,254 +983,44 @@ oninput="this.value=this.value.replace(/\D/g,'')"
 
 <datalist id="listaRestaurantes">
 
-<option
-  value="KONI FÁTIMA DK"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
+<!-- T1 - 17/11 e 18/11 -->
+
+<!-- T1 -  17/11 e 18/11 -->
+<option 
+  value="ASA AÇAI - (CIB - FUTURO)" 
+  data-turma="T1" 
+  data-data="17/11 e 18/11"> 
 </option>
 
-<option
-  value="KONI PRAIA"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
+<option 
+  value="ASA AÇAI - SHOPPING ALDEIA SERRA MALL" 
+  data-turma="T1" 
+  data-data="17/11 e 18/11"> 
 </option>
 
-<option
-  value="KONI ALDEIA DA SERRA"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
+<option 
+  value="ASA AÇAI - PETROPOLIS" 
+  data-turma="T1" 
+  data-data="17/11 e 18/11"> 
 </option>
 
-<option
-  value="KONI SAVASSI"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
+<option 
+  value="ASA AÇAI - RUA JARDINS" 
+  data-turma="T1" 
+  data-data="17/11 e 18/11"> 
 </option>
 
-<option
-  value="KONI AMERICAS SHOPPING"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
+<option 
+  value="ASA AÇAI - SHOPPING BALNEARIO CAMBORIU" 
+  data-turma="T1" 
+  data-data="17/11 e 18/11"> 
 </option>
 
-<option
-  value="KONI ARCOVERDE"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI BOTAFOGO RUA"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI CARIOCA SHOPPING MM"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI CENTRO"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI COPACABANA"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI CAXIAS SHOPPING MM"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI GAVEA"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI ICARAÍ MM"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI ILHA PLAZA"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI IPANEMA"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI PARK JACAREPAGUA"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI LEBLON II"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI FARME"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI LARANJEIRAS"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI LARGO DO MACHADO"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI MARIZ E BARROS DK"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI MEIER"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI METROPOLITANO"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI NORTE SHOPPING"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI OUTLET WASHINGTON LUIZ"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI PARK LAGOS"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI PLAZA MACAE"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI PLAZA NITEROI"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI SIDER VR MM"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI RIO SUL"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI SHOPPING NOVA IGUAÇU"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI BOTAFOGO PRAIA"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI DOWNTOWN"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI TOP SHOPPING MM"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
-
-<option
-  value="KONI VIA PARQUE"
-  data-turma="T1"
-  data-data="18/08 e 19/08">
-</option>
 
 </datalist>
 
-        <input type="email" id="email" placeholder="E-mail">
+        <input type="email" id="email" placeholder="E-mail do restaurante">
 
-        <div class="radio-group">
-
-          <h3>Você precisa de hospedagem?</h3>
-
-          <label>
-            <input type="radio" name="hospedagem" value="Sim">
-            Sim
-          </label>
-
-          <label>
-            <input type="radio" name="hospedagem" value="Não">
-            Não
-          </label>
-
-        </div>
-
-        <div class="radio-group">
-
-          <h3>
-            Para nos orientar quanto à divisão dos quartos,
-            qual a sua identidade de gênero?
-          </h3>
-
-          <label>
-            <input type="radio" name="genero" value="Feminino">
-            Feminino
-          </label>
-
-          <label>
-            <input type="radio" name="genero" value="Masculino">
-            Masculino
-          </label>
-
-        </div>
 
         <h3>Turma - Rio de Janeiro</h3>
 
@@ -884,35 +1050,37 @@ oninput="this.value=this.value.replace(/\D/g,'')"
 function iniciarFormulario() {
 
   document
-  .getElementById("capaInicial")
-  .style.display = "none";
+    .getElementById("capaInicial")
+    .style.display = "none";
 
   document
-  .getElementById("termo1")
-  .style.display = "block";
+    .getElementById("termo1")
+    .style.display = "block";
 
 }
+
 
 function abrirTermo2() {
 
   document
-  .getElementById("termo1")
-  .style.display = "none";
+    .getElementById("termo1")
+    .style.display = "none";
 
   document
-  .getElementById("termo2")
-  .style.display = "block";
+    .getElementById("termo2")
+    .style.display = "block";
 
 }
+
 
 function abrirFormulario() {
 
   document
-  .getElementById("termo2")
-  .style.display = "none";
+    .getElementById("termo2")
+    .style.display = "none";
 
   const formulario =
-  document.getElementById("formulario");
+    document.getElementById("formulario");
 
   formulario.style.display = "block";
 
@@ -922,46 +1090,66 @@ function abrirFormulario() {
 
 }
 
-  const restaurantes = {};
 
-  const opcoes =
+/* =========================
+   RESTAURANTES
+   ========================= */
+
+const restaurantes = {};
+
+const opcoes =
   document.querySelectorAll("#listaRestaurantes option");
 
-  opcoes.forEach(opcao => {
 
-    const nome = opcao.value;
+opcoes.forEach(opcao => {
 
-restaurantes[nome] = {
+  const nome = opcao.value;
 
-  turma: opcao.dataset.turma || "",
+  restaurantes[nome] = {
 
-  data: opcao.dataset.data || ""
+    turma:
+      opcao.dataset.turma || "",
 
-};
+    data:
+      opcao.dataset.data || ""
 
-  });
+  };
 
-  const restauranteInput =
+});
+
+
+const restauranteInput =
   document.getElementById("restaurante");
 
-  restauranteInput.addEventListener("change", preencherDados);
 
-  restauranteInput.addEventListener("input", preencherDados);
+restauranteInput.addEventListener(
+  "change",
+  preencherDados
+);
+
+
+restauranteInput.addEventListener(
+  "input",
+  preencherDados
+);
+
 
 function preencherDados() {
 
   const restaurante =
-  restauranteInput.value.trim();
+    restauranteInput.value.trim();
 
-  const info = restaurantes[restaurante];
+  const info =
+    restaurantes[restaurante];
+
 
   if (info) {
 
     document.getElementById("turma").value =
-    info.turma;
+      info.turma;
 
     document.getElementById("datas").value =
-    info.data;
+      info.data;
 
   }
 
@@ -975,41 +1163,49 @@ function preencherDados() {
 
 }
 
+
+/* =========================
+   ENVIO DA INSCRIÇÃO
+   ========================= */
+
 async function enviar() {
 
+
   const nome =
-  document.getElementById("nome").value.trim();
+    document.getElementById("nome").value.trim();
+
 
   const cpf =
-  document.getElementById("cpf").value.trim();
+    document.getElementById("cpf").value.trim();
+
 
   const nascimento =
-  document.getElementById("nascimento").value.trim();
+    document.getElementById("nascimento").value.trim();
+
 
   const celular =
-  document.getElementById("celular").value.trim();
+    document.getElementById("celular").value.trim();
+
 
   const restaurante =
-  document.getElementById("restaurante").value.trim();
+    document.getElementById("restaurante").value.trim();
+
 
   const email =
-  document.getElementById("email").value.trim();
+    document.getElementById("email").value.trim();
+
 
   const turma =
-  document.getElementById("turma").value.trim();
+    document.getElementById("turma").value.trim();
+
 
   const datas =
-  document.getElementById("datas").value.trim();
+    document.getElementById("datas").value.trim();
 
-  const hospedagem =
-  document.querySelector(
-    'input[name="hospedagem"]:checked'
-  );
 
-  const genero =
-  document.querySelector(
-    'input[name="genero"]:checked'
-  );
+  /* =========================
+     VALIDAÇÃO
+     ========================= */
 
   if (
     !nome ||
@@ -1019,40 +1215,42 @@ async function enviar() {
     !restaurante ||
     !email ||
     !turma ||
-    !datas ||
-    !hospedagem ||
-    !genero
+    !datas
   ) {
 
     alert(
-      "Por favor, preencha todos os campos e selecione todas as opções antes de enviar."
+      "Por favor, preencha todos os campos antes de enviar."
     );
 
     return;
+
   }
 
+
   const dataParticipacao = datas;
+
+
+  /* =========================
+     DADOS ENVIADOS
+     ========================= */
 
   const dadosEnviar = {
 
     nome: nome,
 
-    cpf: cpf.replace(/\D/g,''),
+    cpf:
+      cpf.replace(/\D/g, ''),
 
     nascimento: nascimento,
 
     celular: celular,
 
     marca:
-    document.getElementById("marca").value,
+      document.getElementById("marca").value,
 
     restaurante: restaurante,
 
     email: email,
-
-    hospedagem: hospedagem.value,
-
-    genero: genero.value,
 
     turma: turma,
 
@@ -1060,97 +1258,136 @@ async function enviar() {
 
   };
 
+
+  /* =========================
+     GOOGLE APPS SCRIPT
+     ========================= */
+
   const url =
-  "https://script.google.com/macros/s/AKfycbwoi-JcHKq2-8yG1zgLjgxuzIYmR3FL3DtvUuTJIYDpqbnyl2Rf1z8SZ5tvAyNcK9Lx/exec";
+    "https://script.google.com/macros/s/AKfycbwoi-JcHKq2-8yG1zgLjgxuzIYmR3FL3DtvUuTJIYDpqbnyl2Rf1z8SZ5tvAyNcK9Lx/exec";
+
 
   try {
 
-await fetch(url, {
 
-  method: "POST",
+    await fetch(url, {
 
-  mode: "no-cors",
+      method: "POST",
 
-  headers: {
-    "Content-Type": "application/json"
-  },
+      mode: "no-cors",
 
-  body:
-  JSON.stringify(dadosEnviar)
+      headers: {
 
-});
+        "Content-Type":
+          "application/json"
+
+      },
+
+      body:
+        JSON.stringify(dadosEnviar)
+
+    });
+
+
+    /* =========================
+       TELA DE SUCESSO
+       ========================= */
 
     document.body.innerHTML = `
 
-    <div style="
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:#f4f6f8;
-      font-family:Verdana,sans-serif;
-      padding:30px;
-    ">
-
       <div style="
-        background:white;
-        max-width:700px;
-        width:100%;
-        border-radius:25px;
-        padding:60px;
-        box-shadow:0 0 25px rgba(0,0,0,0.08);
-        text-align:center;
+        min-height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:#f4f6f8;
+        font-family:Verdana,sans-serif;
+        padding:30px;
       ">
 
-        <img
-          src="Logo Koni.png"
-          style="width:300px; margin-bottom:5px;"
-        >
-
-        <h1 style="
-          color:#2e7d32;
-          font-size:42px;
-          margin-bottom:10px;
-        ">
-          🎉 Inscrição realizada!
-        </h1>
-
-        <p style="
-          font-size:22px;
-          line-height:1.8;
-          color:#333;
-        ">
-          Parabéns,
-          <strong>${nome}</strong>!
-          <br><br>
-Sua inscrição foi confirmada com sucesso.
-
-Anote sua data de participação
-e aguarde futuras orientações
-da equipe de Ensino.        </p>
-
         <div style="
-          margin-top:35px;
-          background:#eef5ff;
-          padding:25px;
-          border-radius:18px;
-          font-size:22px;
-          color:#1f3c5c;
-          font-weight:bold;
-">
-  📅 Sua participação será em:
-  <br><br>
-  ${dataParticipacao}
-  <br><br>
-  📍 Local: Cozinha Escola. RJ<br> 
-     Rua do Carmo, 75
-     Centro.
-</div>
+          background:white;
+          max-width:700px;
+          width:100%;
+          border-radius:25px;
+          padding:60px;
+          box-shadow:0 0 25px rgba(0,0,0,0.08);
+          text-align:center;
+        ">
+
+          <img
+            src="Logo ASA.png"
+            style="width:300px; margin-bottom:5px;"
+          >
+
+          <h1 style="
+            color:#6A1B9A;
+            font-size:42px;
+            margin-bottom:10px;
+          ">
+            🎉 Inscrição realizada!
+          </h1>
+
+
+          <p style="
+            font-size:22px;
+            line-height:1.8;
+            color:#333;
+          ">
+
+            Parabéns,
+            <strong>${nome}</strong>!
+
+            <br><br>
+
+            Sua inscrição foi confirmada com sucesso.
+
+            <br><br>
+
+            Anote sua data de participação
+            e aguarde futuras orientações
+            da equipe de Ensino.
+
+          </p>
+
+
+          <div style="
+            margin-top:35px;
+            background:#eef5ff;
+            padding:25px;
+            border-radius:18px;
+            font-size:22px;
+            color:#1f3c5c;
+            font-weight:bold;
+          ">
+
+            📅 Sua participação será em:
+
+            <br><br>
+
+            ${dataParticipacao}
+
+            <br><br>
+
+            📍 Local: Cozinha Escola - RJ
+
+            <br><br>
+
+            Rua do Carmo, 75
+
+            <br>
+
+            Centro - Rio de Janeiro.
+
+          </div>
+
+
+        </div>
+
       </div>
 
-    </div>
-
     `;
+
 
   }
 
@@ -1167,7 +1404,6 @@ da equipe de Ensino.        </p>
 }
 
 </script>
-
 
 </body>
 </html>
